@@ -52,8 +52,7 @@ mvn test
 If you find any issues or optimizations, feel free to open an issue or submit a pull request!
 
 ## Attribution
-This project utilizes precomputed magic numbers from **Shallow Blue**.  
-For more details, visit: [[GitHub Repository URL or Website](https://github.com/GunshipPenguin/shallow-blue)]
+This project utilizes precomputed magic numbers from [**Shallow Blue**](https://github.com/GunshipPenguin/shallow-blue).
 
 ## License
 This project is licensed under the MIT License.
