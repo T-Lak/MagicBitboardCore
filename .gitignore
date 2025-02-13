@@ -45,7 +45,6 @@ release.properties
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-*.iml
 
 ### Java ###
 *.class
