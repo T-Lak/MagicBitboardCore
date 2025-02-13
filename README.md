@@ -37,7 +37,7 @@ BitboardUtils.printBoard(attacks);
  ├── main/java/bitboard
  │     ├── attacks/        # Move generation logic
  │     ├── lookup/         # Precomputed attack tables
- │     ├── utils/           # Utility functions (e.g., bitboard printing)
+ │     ├── utils/          # Utility functions (e.g., bitboard printing)
  │     ├── pieces/         # Piece-specific attack logic
  ├── test/java/bitboard    # Unit tests
 ```
