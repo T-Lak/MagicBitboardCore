@@ -24,7 +24,7 @@ mvn clean install
 ### Usage
 To compute pseudo-legal attacks for different pieces:
 #### Example: King Attacks
-```bash
+```java
 int square = 36;
 long occupied = 0x0000001008000000L; // Some occupied squares
 long attacks = Queen.getAttacks(square, occupied);
@@ -32,7 +32,7 @@ printBoard(attacks);
 ```
 
 #### Printed Output:
-```bash
+```plaintext
 0 1 0 0 1 0 0 1 |8
 0 0 1 0 1 0 1 0 |7
 0 0 0 1 1 1 0 0 |6
