@@ -31,6 +31,20 @@ long attacks = Queen.getAttacks(square, occupied);
 printBoard(attacks);
 ```
 
+#### Printed Output:
+```bash
+0 1 0 0 1 0 0 1 |8
+0 0 1 0 1 0 1 0 |7
+0 0 0 1 1 1 0 0 |6
+1 1 1 1 0 1 1 1 |5
+0 0 0 1 1 1 0 0 |4
+0 0 0 0 1 0 1 0 |3
+0 0 0 0 1 0 0 1 |2
+0 0 0 0 1 0 0 0 |1
+----------------+
+A B C D E F G H
+```
+
 #### Project Structure
 ```bash
 /src
