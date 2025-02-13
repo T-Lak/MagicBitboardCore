@@ -4,6 +4,15 @@ import static bitboard.lookup.MagicNumbers.bishopMagics;
 import static bitboard.lookup.MagicNumbers.rookMagics;
 
 
+/**
+ * Generates and stores magic bitboard lookup tables for fast move generation
+ * of sliding pieces (bishops and rooks). Magic bitboards allow efficient
+ * attack set computation by utilizing precomputed attack patterns.
+
+ * This class initializes lookup tables for all 64 squares, applying magic
+ * multiplications to index precomputed move sets.
+ */
+
 public class MagicAttacks {
 
     public static final long[][] bishopAttackLUT = new long[64][512];
@@ -18,8 +27,16 @@ public class MagicAttacks {
         }
     }
 
+    /**
+     * Generates magic bitboard attack lookup entries for a rook at a given square.
+     * Uses the Carry-Ripple Trick to iterate through all subsets of the occupancy mask
+     * and compute the corresponding attack set.
+     *
+     * @param sq   The index of the square (0-63) where the rook is located.
+     * @param mask The occupancy mask for the rook, excluding edge squares.
+     */
+
     private static void genRookAttacks(int sq, long mask) {
-        // Carry-Ripple trick
         long subset = 1L;
         while (subset != 0) {
             subset = (subset - mask) & mask;
@@ -29,6 +46,15 @@ public class MagicAttacks {
             rookAttackLUT[sq][index] = attackBB;
         }
     }
+
+    /**
+     * Computes the pseudo-legal attack set for a rook from a given square,
+     * considering blocking pieces along its rank and file.
+     *
+     * @param square    The index of the square (0-63) where the rook is located.
+     * @param occupied  A bitboard representing all occupied squares.
+     * @return A bitboard indicating all squares the rook can move to.
+     */
 
     private static Long getRookAttackMask(int square, long occupied) {
         long north = RayTables.north[square];
@@ -64,8 +90,16 @@ public class MagicAttacks {
         return (north | east | south | west);
     }
 
+    /**
+     * Generates magic bitboard attack lookup entries for a bishop at a given square.
+     * Uses the Carry-Ripple Trick to iterate through all subsets of the occupancy mask
+     * and compute the corresponding attack set.
+     *
+     * @param sq     The index of the square (0-63) where the bishop is located.
+     * @param maskBB The occupancy mask for the bishop, excluding edge squares.
+     */
+
     private static void genBishopAttacks(int sq, long maskBB) {
-        // Carry-Ripple trick
         long subset = 1L;
         while (subset != 0) {
             subset = (subset - maskBB) & maskBB;
@@ -75,6 +109,15 @@ public class MagicAttacks {
             bishopAttackLUT[sq][index] = moveBB;
         }
     }
+
+    /**
+     * Computes the pseudo-legal attack set for a bishop from a given square,
+     * considering blocking pieces along its diagonals.
+     *
+     * @param square       The index of the square (0-63) where the bishop is located.
+     * @param occupancies  A bitboard representing all occupied squares.
+     * @return A bitboard indicating all squares the bishop can move to.
+     */
 
     private static Long getBishopAttackMask(int square, long occupancies) {
         long northEast = RayTables.northEast[square];
@@ -109,6 +152,17 @@ public class MagicAttacks {
 
         return (northEast | northWest | southEast | southWest);
     }
+
+    /**
+     * Computes the index for the magic bitboard lookup table based on occupied squares.
+     * This function performs a 'magic' multiplication and shifts the result to extract
+     * the precomputed attack set index.
+     *
+     * @param bitShift    The number of relevant occupancy bits.
+     * @param magicNumber The precomputed magic number for the square.
+     * @param occupancies A bitboard representing the current occupied squares.
+     * @return The index used to retrieve attack patterns from the lookup table.
+     */
 
     public static int getTableEntryIndex(int bitShift, long magicNumber, long occupancies) {
         return (int) ((occupancies * magicNumber) >>> (64 - bitShift));

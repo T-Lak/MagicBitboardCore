@@ -1,0 +1,5 @@
+#Magic Bitboard Core
+
+
+
+
