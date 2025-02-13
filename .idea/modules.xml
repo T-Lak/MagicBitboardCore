@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MagicBbChess.iml" filepath="$PROJECT_DIR$/MagicBbChess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Magic-Bitboard.iml" filepath="$PROJECT_DIR$/Magic-Bitboard.iml" />
     </modules>
   </component>
 </project>

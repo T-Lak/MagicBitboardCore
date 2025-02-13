@@ -1,4 +1,4 @@
-package chess;
+package bitboard.lookup;
 
 public class MagicNumbers {
     public static long[] rookMagics = {
