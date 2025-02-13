@@ -28,7 +28,7 @@ To compute pseudo-legal attacks for different pieces:
 int square = 36;
 long occupied = 0x0000001008000000L; // Some occupied squares
 long attacks = Queen.getAttacks(square, occupied);
-BitboardUtils.printBoard(attacks);
+printBoard(attacks);
 ```
 
 #### Project Structure
