@@ -52,7 +52,7 @@ A B C D E F G H
  │     ├── attacks/        # Move generation logic
  │     ├── lookup/         # Precomputed attack tables
  │     ├── utils/          # Utility functions (e.g., bitboard printing)
- │     ├── pieces/         # Piece-specific attack logic
+ │    
  ├── test/java/bitboard    # Unit tests
 ```
 
