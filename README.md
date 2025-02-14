@@ -4,7 +4,7 @@ This project implements the core functions for building a highly efficient move 
 
 ## Features
 ✅ Magic Bitboard lookup tables for **bishops, rooks and queens**  
-✅ Efficient **pseudo-legal move generation**  
+✅ Efficient **piece attack computation for move generation**  
 ✅ **Bitwise operations** for ultra-fast computations  
 ✅ Fully **commented** and **tested**  
 
