@@ -1,12 +1,12 @@
 ## Magic Bitboard Core
 
-This project implements the core functions for building a highly efficient move generator and chess engine. It utilizes [Magic Bitboards](https://www.chessprogramming.org/Magic_Bitboards) for sliding pieces, enabling **fast attack computations**. 
+Magic Bitboard Core is a high-performance library for efficient attack computations in chess engines. It leverages [Magic Bitboards](https://www.chessprogramming.org/Magic_Bitboards) to enable **fast attack lookups for sliding pieces**.
 
 ## Features
 ✅ Magic Bitboard lookup tables for **bishops, rooks and queens**  
-✅ Efficient **piece attack computation for move generation**  
+✅ **Efficient attack computations** for building fast move generators in chess engines  
 ✅ **Bitwise operations** for ultra-fast computations  
-✅ Fully **commented** and **tested**  
+✅ Fully **documented** and **unit-tested for reliability**  
 
 ## Installation & Dependencies
 This project is built with Java and Maven. To use it, clone the repository and build with Maven:
@@ -49,7 +49,7 @@ A B C D E F G H
 ```bash
 /src
  ├── main/java/bitboard
- │     ├── attacks/        # Move generation logic
+ │     ├── attacks/        # Attack computation for all pieces
  │     ├── lookup/         # Precomputed attack tables
  │     ├── utils/          # Utility functions (e.g., bitboard printing)
  ├── test/java/bitboard    # Unit tests
