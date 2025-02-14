@@ -23,7 +23,7 @@ mvn clean install
 
 ### Usage
 To compute pseudo-legal attacks for different pieces:
-#### Example: King Attacks
+#### Example: Queen Attacks
 ```java
 int square = 36;
 long occupied = 0x0000001008000000L; // Some occupied squares
